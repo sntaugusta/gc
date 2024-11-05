@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sara Nossa Terra - Lower Third</title>
+    <style>
+      @font-face {
+        font-family: Lemon;
+        src: url('./font/Lemon Milk Pro Bold.otf');
+      }
+      @font-face {
+        font-family: Lemon Light;
+        src: url('./font/Lemon Milk Pro Regular.otf');
+      }
+      @keyframes animation-brand {
+        0% {
+          transform: scale(0.8) translateY(160px);
+          filter: opacity(0);
+        }
+        100% {
+          transform: scale(1) translateY(0px);
+          filter: opacity(1);
+        }
+      }
+      @keyframes animation-line-first {
+        0% {
+          transform: rotateX(90deg) translateY(90px);
+          filter: opacity(1);
+        }
+        100% {
+          transform: rotateX(0deg) translateY(0px);
+          filter: opacity(0);
+        }
+      }
+      @keyframes animation-line-second {
+        0% {
+          transform: rotateX(90deg) translateY(90px);
+          filter: opacity(0);
+        }
+        100% {
+          transform: rotateX(0deg) translateY(0px);
+          filter: opacity(1);
+        }
+      }
+      @keyframes animation-description {
+        0% {
+          transform: translateY(-40px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      @keyframes animation-name {
+        0% {
+          transform: translateY(52px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      @keyframes animation-wrapper-start {
+        0% {
+          transform: scale(0) rotate(25deg);
+          filter: opacity(0);
+        }
+        33% {
+          transform: scale(1.1) rotate(5deg);
+        }
+        66% {
+          transform: scale(1) rotate(-5deg);
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+          filter: opacity(1);
+        }
+      }
+      @keyframes animation-wrapper-end {
+        0% {
+          transform: scale(1) skewX(0deg);
+          filter: opacity(1);
+        }
+        50% {
+          transform: scale(0.9) skewX(-5deg);
+        }
+        100% {
+          transform: scale(0) skewX(15deg);
+          filter: opacity(0);
+        }
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        font-size: 48px;
+        background-color: transparent;
+        min-height: 190px;
+        min-width: 1920px;
+        overflow: hidden;
+      }
+      .lower-third {
+        display: flex;
+        align-items: flex-end;
+        gap: 16px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 16px;
+        min-height: 168px;
+      }
+      .lower-third__wrapper {
+        flex: 1;
+        display: flex;
+        gap: 16px;
+        overflow-y: hidden;
+        background-image: linear-gradient(to bottom, #fff 0%, #fff 100%);
+        background-size: 100% 100%;
+        padding: 16px;
+        align-items: center;
+        transform: scale(0);
+        filter: opacity(0);
+        min-height: 120px;
+        transform-origin: left bottom;
+      }
+      .lower-third__brand {
+        width: 40px;
+        height: auto;
+        fill: transparent;
+        stroke: #000;
+        stroke-width: 6px;
+        transform: scale(0) translateY(160px);
+        filter: opacity(0);
+        animation: animation-brand 1.2s 0.3s forwards;
+      }
+      .lower-third__lines {
+        position: relative;
+        height: 72px;
+      }
+      .lower-third__lines-first,
+      .lower-third__lines-second {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        transform: translateY(120px);
+        border-left: 2px solid;
+        transform-origin: bottom;
+      }
+      .lower-third__lines-first {
+        border-left-color: #ccc;
+        animation: animation-line-first 1.6s forwards;
+      }
+      .lower-third__lines-second {
+        border-left-color: #000;
+        animation: animation-line-second 0.8s 0.8s forwards;
+      }
+      .lower-third__lines-first {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        transform: translateY(120px);
+        border-left: 2px solid;
+        transform-origin: bottom;
+      }
+      .lower-third__name {
+        font-family: Lemon;
+        text-transform: uppercase;
+        overflow: hidden;
+        font-size: 40px;
+        line-height: 52px;
+      }
+      .lower-third__name-text {
+        transform: translateY(52px);
+        animation: animation-name 0.8s 0.8s forwards;
+      }
+      .lower-third__description {
+        font-size: 24px;
+        line-height: 36px;
+        font-family: Lemon Light;
+        overflow: hidden;
+        transform: translateY(-4px);
+      }
+      .lower-third__description-text {
+        transform: translateY(-40px);
+        animation: animation-description 0.8s 0.8s forwards;
+      }
+      [data-text] {
+        &:before {
+          content: attr(data-text);
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="container" class="lower-third"></header>
+    <script>
+      const paramName = 'name';
+      const paramDescription = 'description';
+      const paramSearch = window.document.location.search.replace(/\?/, '');
+      const paramsGroup = new URLSearchParams(paramSearch);
+      const queryName = paramsGroup.getAll(paramName);
+      const queryDescription = paramsGroup.getAll(paramDescription);
+
+      const renderItem = (item, i) => {
+        const description = queryDescription[i];
+        return `
+            <div class="lower-third__item">
+              <div class="lower-third__wrapper" style="animation: animation-wrapper-start 0.6s 0.6s linear forwards, animation-wrapper-end 0.6s 5.6s forwards;">
+                <svg class="lower-third__brand" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="177.44px" height="327.88px" viewBox="0 0 177.44 327.88">
+                  <path class="st0" d="M95.66,288.1c0,0,50.09-49,60.83-122.73c0,0,6.84,52.64-9.87,83.67c-5.05,9.38-11.58,16.66-18.22,22.26 C113.05,284.2,95.66,288.1,95.66,288.1 M116.66,102.38c0,0-64.84,37.45-93.53,88.2C-5.56,241.33,0.54,286.1,0.54,286.1 c12.76-8.84,25.53-28.14,25.53-28.14c-7.71,24.41-0.75,69.92-0.75,69.92s47.72-12.29,88.99-88.35 c41.27-76.06,44.21-127.47,44.21-127.47c-8.23,17.86-94.39,79.99-94.39,79.99s4.57-32.81,43.55-61.1 c59.42-43.11,67.91-77.67,67.91-77.67C161.85,72.33,116.66,102.38,116.66,102.38 M133.75,36.12C95.63,58.89,112.48,93.5,112.48,93.5 s42.7-26.88,58.12-50.45C186.01,19.48,170.57,0,170.57,0S170.3,14.28,133.75,36.12"
+                  />
+                </svg>
+                <div class="lower-third__lines">
+                  <div class="lower-third__lines-first"></div>
+                  <div class="lower-third__lines-second"></div>
+                </div>
+                <div class="lower-third__information">
+                  <div class="lower-third__name">
+                    <div class="lower-third__name-text">${item}</div>
+                  </div>
+                  <div class="lower-third__description">
+                    ${description ? `<div class="lower-third__description-text">${description}</div>` : ''}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+      };
+      queryName.forEach((item, i) => {
+        setTimeout(() => {
+          window['container'].insertAdjacentHTML('beforeend', renderItem(item, i));
+        }, i * 1000);
+      });
+    </script>
+  </body>
+</html>
