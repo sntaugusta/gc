@@ -62,30 +62,21 @@
       }
       @keyframes animation-wrapper-start {
         0% {
-          transform: scale(0) rotate(25deg);
+          transform: translateY(48px);
           filter: opacity(0);
         }
-        33% {
-          transform: scale(1.1) rotate(5deg);
-        }
-        66% {
-          transform: scale(1) rotate(-5deg);
-        }
         100% {
-          transform: scale(1) rotate(0deg);
+          transform: translateY(0px);
           filter: opacity(1);
         }
       }
       @keyframes animation-wrapper-end {
         0% {
-          transform: scale(1) skewX(0deg);
+          transform: perspective(996px) rotateX(0deg);
           filter: opacity(1);
         }
-        50% {
-          transform: scale(0.9) skewX(-5deg);
-        }
         100% {
-          transform: scale(0) skewX(15deg);
+          transform: perspective(996px) rotateX(90deg);
           filter: opacity(0);
         }
       }
@@ -115,14 +106,15 @@
         display: flex;
         gap: 16px;
         overflow-y: hidden;
-        background-image: linear-gradient(to bottom, #fff 0%, #fff 100%);
+        background-image: linear-gradient(to bottom, #fff9 0%, #fffe 100%);
         background-size: 100% 100%;
         padding: 16px;
         align-items: center;
         transform: scale(0);
         filter: opacity(0);
         min-height: 120px;
-        transform-origin: left bottom;
+        transform-origin: center bottom;
+        border-radius: 4px;
       }
       .lower-third__brand {
         width: 40px;
@@ -233,7 +225,7 @@
       queryName.forEach((item, i) => {
         setTimeout(() => {
           window['container'].insertAdjacentHTML('beforeend', renderItem(item, i));
-        }, i * 1000);
+        }, i * 300);
       });
     </script>
   </body>
