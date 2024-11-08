@@ -98,7 +98,7 @@
         align-items: flex-end;
         gap: 16px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        padding: 16px;
+        padding: 16px 32px;
         min-height: 168px;
       }
       .lower-third__wrapper {
@@ -196,6 +196,10 @@
       const paramsGroup = new URLSearchParams(paramSearch);
       const queryName = paramsGroup.getAll(paramName);
       const queryDescription = paramsGroup.getAll(paramDescription);
+
+      if (!('obsstudio' in window)) {
+        document.body.style = 'background-color: #000';
+      }
 
       const renderItem = (item, i) => {
         const description = queryDescription[i];

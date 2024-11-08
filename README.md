@@ -1,18 +1,34 @@
 # Lower Third Sara Nossa Terra
 
-Para facilitar as mudanças de nomes dos pregadores nas lives, criamos esse template para mudar nomes e descrições através das queries strings da URL
+## Descrição
+
+Sem necessidade plugins. Instalação simples. Facilidade para alterar dados.
+Fonte para adicionar Lower Third para lives no OBS da Sara Nossa Terra. Um Fonte que simplifica a mudanças de nomes dos pregadores e descrições das lives através das queries strings da URL.
+
+## Exemplo
+
+![image](./img/lower-third-sample.gif)
 
 ## Modo de instalação
 
-<ol>
-  <li>Crie uma nova Fonte de "Navegador"</li>
-  <li>Adicione o nome da nova Fonte</li>
-  <li>
-    Na tela de Propriedades de Navegador:
-    <ol>
-      <li>Adicione na URL o valor `https://sntaugusta.github.io/lower-third/?name=NOME&description=DESCRIÇÃO`</li>
-      <li>Adicione na Largura o valor de `1920`</li>
-      <li>Adicione na Altura o valor de `190`</li>
-    </ol>
-  </li>
-</ol>
+1. Crie uma nova Fonte de "Navegador"
+2. Adicione um nome de sua preferência para a criar o Lower Third
+3. Acesse as Propriedades de Navegador da fonte criada
+4. Adicione no campo URL, a URL do git pages do lower third com as propriedades `name` e `description` na query string (Ex.: `https://sntaugusta.github.io/lower-third/?name=Bp. Christiano Guimarães&description=@sntoficial`)
+5. Adicione na Largura o valor de `1920`
+6. Adicione na Altura o valor de `190`
+7. Pronto 🙌
+
+### Informações extras
+
+- O parâmetro `description` não é um parâmetro obrigatório
+- Para adicionar mais nomes e descrições, adicione mais query string com a propriedade `name` (Ex.: `https://sntaugusta.github.io/lower-third/?name=Bp. Christiano Guimarães&description=@bispochristiano&name=Bpa. Camille Falcão&description=@bpacamille`)
+
+## Em breve
+
+- Criação de template para o arena
+- Criação de template customizaveis para eventos
+
+## Novas solicitações
+
+Crie uma [nova issue](https://github.com/sntaugusta/lower-third/issues/new) neste repositório, e aguarde um feedback do time de desenvolvimento da Sara Nossa Terra Augusta
