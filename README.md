@@ -8,7 +8,8 @@ Fonte para adicionar Lower Third para lives no OBS da Sara Nossa Terra. Um Fonte
 ## Exemplo
 
 ![image](./img/lower-third-sample.gif)
-[https://sntaugusta.github.io/lower-third/?name=Bp. Christiano Guimarães&description=@bispochristiano](https://sntaugusta.github.io/lower-third/?name=Bp. Christiano Guimarães&description=@bispochristiano)
+
+[Exemplo online](https://sntaugusta.github.io/lower-third/?name=Bp.%20Christiano%20Guimar%C3%A3es&description=@bispochristiano)
 
 ## Modo de instalação
 
