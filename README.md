@@ -5,7 +5,8 @@
 - Sem necessidade de instalação de plugins.
 - Simplecidade na instalação.
 - Facilidade para alterar dados.
-Fonte para adicionar Lower Third para lives no OBS da Sara Nossa Terra. Um Fonte que simplifica a mudanças de nomes dos pregadores e descrições das lives através das queries strings da URL.
+
+Fonte para adicionar Lower Third para lives no OBS da Sara Nossa Terra. Uma Fonte que simplifica a mudanças de nomes dos pregadores e descrições das lives através das queries strings da URL.
 
 ## Exemplo
 
